@@ -9,6 +9,7 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\UserController;
 use App\Models\Greeting;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -110,5 +111,12 @@ Route::resource('comments', CommentController::class);
 
 //Route::get('job', JobController::class);
 Route::get('job', [JobController::class, 'index'])->name('job');
+
+
+
+Route::get('test-artisan', function () {
+    $exitCode = Artisan::call('post:newpost');
+    var_dump($exitCode);
+})->name('test-artisan');
 
 

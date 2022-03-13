@@ -4,21 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Models\Comments;
 use App\Models\Posts;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use phpDocumentor\Reflection\Types\Object_;
+
 
 class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function index()
     {
         // return response()->file( 'myFile.pdf');
         //return response()->make('HeLLo, WorLd!');
+
         return view('pages.comments.index')->with('comments', Comments::all());
         //return view('pages.comments.index',['comments' => Comments::all()]);
     }
@@ -26,11 +31,10 @@ class CommentController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function create()
     {
-        //
         return view('pages.comments.create');
     }
 
@@ -43,7 +47,6 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         //
-
         $comment = new Comments;
         $comment->title = $request->title;
         $comment->comment = $request->comment;
@@ -52,7 +55,6 @@ class CommentController extends Controller
         $comment->posts_id = $post->id;
 
         $comment->save();
-
         /*
         $comment = new Comments;
         $comment->fill(array(
@@ -102,7 +104,7 @@ class CommentController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
     public function destroy($id)
     {

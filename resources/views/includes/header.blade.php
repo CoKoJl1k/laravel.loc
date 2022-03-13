@@ -43,6 +43,8 @@
                 <a class="nav-link" href="{{route('comments.create')}}"> <b>comments create</b> </a>
 
                 <a class="nav-link" href="{{route('job')}}"> <b>JOB</b> </a>
+                <a class="nav-link" href="{{route('test-artisan')}}"> <b>test-artisan</b> </a>
+
             </div>
         </div>
     </div>

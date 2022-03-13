@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
+            $table->string('title');
             $table->string('post')->nullable();
             //$table->unsignedInteger('comments_id')->nullable();
             //$table->foreignId('comment_id')->constrained('comments');

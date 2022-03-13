@@ -28,9 +28,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-
+/*
         $comment = new Comments;
-
         Posts::creating(function ($post) use ($comment) {
             try {
                 $comment->title = 'title';
@@ -43,5 +42,7 @@ class AppServiceProvider extends ServiceProvider
                 return false; //Отменяет create() Eloquent
             }
         });
+*/
     }
+
 }

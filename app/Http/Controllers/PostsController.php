@@ -67,12 +67,13 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->json());
+        //dd($request->input('title'));
         //Posts::create(request()->only(['post-text']));
         Posts::create( [
             'title' => $request->title,
            'post' => $request->post,
         ]);
-
 
         return redirect()->route('posts.index');
     }
