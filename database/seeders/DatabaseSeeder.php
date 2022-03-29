@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Comments;
 use App\Models\Posts;
 use App\Models\Tasks;
+use App\Models\Dogs;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,5 +22,6 @@ class DatabaseSeeder extends Seeder
         Tasks::factory()->count(3)->create();
         Posts::factory()->count(3)->create();
         Comments::factory()->count(3)->create();
+        Dogs::factory()->count(3)->create();
     }
 }

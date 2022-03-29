@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Posts;
 use Exception;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use Throwable;
 
 class WelcomeNewUsers extends Command
@@ -40,6 +41,7 @@ class WelcomeNewUsers extends Command
      */
     public function handle()
     {
+        //Log::info ('Generated reports reports reports.');
         return 0;
     }
 }

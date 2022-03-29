@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\View;
 
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\HomeController;
+
+use App\Providers\AppServiceProvider;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -113,10 +116,13 @@ Route::resource('comments', CommentController::class);
 Route::get('job', [JobController::class, 'index'])->name('job');
 
 
-
 Route::get('test-artisan', function () {
     $exitCode = Artisan::call('post:newpost');
     var_dump($exitCode);
 })->name('test-artisan');
+
+Route::get('test1', function () {
+ echo 'hello';
+})->name('test1');
 
 

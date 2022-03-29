@@ -33,11 +33,7 @@ class SayHello implements ShouldQueue
      */
     public function handle(): string
     {
-       // dd('Hello, Universe');
-        // return  view('tasks.job', ['job' => $job]);
         return 'Hello, Universe i am job data ';
-        //return view('pages.job', ['job' => $job]);
-        //->with('comments', Comments::all());;
     }
 
 

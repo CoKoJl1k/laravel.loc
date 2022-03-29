@@ -46,7 +46,7 @@ class PostsController extends Controller
         return view('pages.posts.index')->with('posts', $posts);
 
 
-        return view('pages.posts.index')->with('posts', Posts::all());
+       // return view('pages.posts.index')->with('posts', Posts::all());
     }
 
     /**
@@ -69,8 +69,8 @@ class PostsController extends Controller
     {
         //dd($request->json());
         //dd($request->input('title'));
-        //Posts::create(request()->only(['post-text']));
-        Posts::create( [
+        //Posts::create(request()->only(['title','post']));
+        Posts::create([
             'title' => $request->title,
            'post' => $request->post,
         ]);
