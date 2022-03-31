@@ -49,7 +49,7 @@ class DogsController extends Controller
         $delay = now()->addMinute(1);
         CrunchReports::dispatch()-> delay($delay);
         */
-        dispatch(new SayHello());
+        dispatch(new SayHello()); //add queue
 
         return view('pages.dogs.index')->with('dogs', DB::table('dogs')->paginate(4));
 
