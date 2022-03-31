@@ -51,6 +51,13 @@ class DogsController extends Controller
         */
         dispatch(new SayHello()); //add queue
 
+        /*
+         * 1
+         *
+         *
+         *
+         */
+
         return view('pages.dogs.index')->with('dogs', DB::table('dogs')->paginate(4));
 
        // return view('pages.dogs.index')->with('dogs', DogsResource::all());
