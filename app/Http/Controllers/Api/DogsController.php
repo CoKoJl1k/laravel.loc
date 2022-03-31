@@ -50,14 +50,6 @@ class DogsController extends Controller
         CrunchReports::dispatch()-> delay($delay);
         */
         dispatch(new SayHello()); //add queue
-
-        /*
-         * 1
-         *
-         *
-         *
-         */
-
         return view('pages.dogs.index')->with('dogs', DB::table('dogs')->paginate(4));
 
        // return view('pages.dogs.index')->with('dogs', DogsResource::all());
