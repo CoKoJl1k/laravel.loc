@@ -17,6 +17,8 @@ class Comments extends Model
 
     public function posts()
     {
-        return $this->belongsTo(Posts::class,'posts_id','id');
+        //return $this->belongsTo(Posts::class,'posts_id','id');
+
+        return $this->belongsTo(Posts::class);
     }
 }

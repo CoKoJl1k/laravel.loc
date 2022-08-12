@@ -43,7 +43,7 @@ class PostsController extends Controller
         //$comments = Posts::find(1)->comments;
        // dd($posts);
 
-        return view('pages.posts.index')->with('posts', $posts);
+        return view('posts.index')->with('posts', $posts);
 
 
        // return view('pages.posts.index')->with('posts', Posts::all());

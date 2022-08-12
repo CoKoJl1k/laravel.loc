@@ -37,7 +37,7 @@ class NewPost extends Command
      *
      * @return int
      */
-    public function handle()
+    public function handle() : void
     {
         try {
             Posts::create( [
@@ -61,7 +61,7 @@ class NewPost extends Command
                 $this->info('Your command has run successfully. ');
             };
 
-            $headers = [ 'title' , 'post' ] ;
+            $headers = ['title', 'post'] ;
             $data = Posts::all([ 'title', 'post' ])->toArray();
             $this->table($headers, $data);
 
